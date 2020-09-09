@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.gof23.abstrcatfactory.CarFactory;
+import com.example.gof23.abstrcatfactory.Engine;
+import com.example.gof23.abstrcatfactory.GoodsCar;
+import com.example.gof23.abstrcatfactory.Seat;
 import com.example.gof23.factorymethod.AudiFactory;
 import com.example.gof23.factorymethod.BWMFactory;
 import com.example.gof23.singlefactory.Audi;
@@ -42,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         c2.run();
     }
     public void c5(View view){
+        CarFactory factory=new GoodsCar();
+        Engine engine = factory.createEngine();
+        Seat seat = factory.createSeat();
+        engine.run();
+        seat.sleep();
 
     }
     public void c6(View view){
